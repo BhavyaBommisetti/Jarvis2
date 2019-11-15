@@ -11,6 +11,9 @@ pipeline {
 	    	slackNotify 'Build Started'
                 build 'BUILD'
             }
+	    post{
+	    jira()
+	    }
         }
         stage('SonarQube Analysis'){
             steps{
